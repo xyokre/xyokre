@@ -9,6 +9,20 @@
 <h1>Maxime SEGAL / Jean Sébastien KUONG - ESILV 3A TP IF</h1>
 <p>Test de la page /bitcoin</p>
 <p>Va direct sur <a href="explorer" target="_blank">*La Page Explorer</a></p>
+
+	<script>
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = this.responseText;
+        var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+        document.getElementById("demo").innerHTML = jsonPretty;
+    }
+};
+xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
+xmlhttp.send();
+	</script>
+	
 <img src= http://www.lesechos.fr/medias/2017/01/02/2053956_comment-la-chine-fait-flamber-le-bitcoin-web-0211652285037.jpg alt="BTC"/>
 </body>
 </html>
