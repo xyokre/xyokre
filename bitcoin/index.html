@@ -9,10 +9,12 @@
 <h1>Maxime SEGAL / Jean Sébastien KUONG - ESILV 3A TP IF</h1>
 <p>Test de la page /bitcoin</p>
 <p>Va direct sur <a href="explorer" target="_blank">*La Page Explorer</a></p>
+	
+	<p> Info en temps réel de la BlockChain </p>
 
 	<script>
 	var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
+	xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = this.responseText;
         var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
@@ -22,6 +24,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "https://api.blockcypher.com/v1/btc/main", true);
 xmlhttp.send();
 	</script>
+	
 	<div class="row">
 	<div class="col-lg-12 col-xs-6">
     	<pre>
